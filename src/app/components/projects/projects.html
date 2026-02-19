@@ -1,19 +1,26 @@
+<!-- projects.component.html -->
 <section id="projects">
+  <span class="section-tag">Portfólio</span>
   <h2>Projetos</h2>
+  <div class="section-divider"></div>
 
-  <div class="card">
-    <h3>Site Institucional - Django</h3>
-    <p>Desenvolvimento de site institucional com painel administrativo.</p>
-    <button onclick="window.open('https://github.com/JoaoPOPaulino/apasi')">
-      Ver Código
-    </button>
-  </div>
+  <div class="projects-grid">
 
-  <div class="card">
-    <h3>Portfólio Angular</h3>
-    <p>Aplicação desenvolvida com Angular e deploy no GitHub Pages.</p>
-    <button onclick="window.open('https://github.com/JoaoPOPaulino/portfolio')">
-      Ver Código
-    </button>
+    <div class="card">
+      <h3>Site Institucional — Django</h3>
+      <p>Desenvolvimento de site institucional com painel administrativo.</p>
+      <button (click)="openLink('https://github.com/JoaoPOPaulino/apasi')">
+        <i class="fab fa-github"></i> Ver Código
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Portfólio Angular</h3>
+      <p>Aplicação desenvolvida com Angular e deploy no GitHub Pages.</p>
+      <button (click)="openLink('https://github.com/JoaoPOPaulino/portfolio')">
+        <i class="fab fa-github"></i> Ver Código
+      </button>
+    </div>
+
   </div>
 </section>

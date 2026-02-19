@@ -1,0 +1,10 @@
+/* about.component.css */
+
+section {
+  background-color: var(--bg);
+}
+
+p {
+  max-width: 620px;
+  font-size: 1.08rem;
+}

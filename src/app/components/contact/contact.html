@@ -1,9 +1,18 @@
+<!-- contact.component.html -->
 <section id="contact">
-  <h2>Contato</h2>
+  <span class="section-tag">Contato</span>
+  <h2>Vamos conversar?</h2>
+  <div class="section-divider"></div>
 
-  <p>Email: joaopoliveirapaulino@gmail.com</p>
+  <div class="contact-box">
+    <p>Estou aberto a novas oportunidades, projetos e colaborações. Entre em contato!</p>
 
-  <button onclick="window.open('https://github.com/JoaoPOPaulino')">
-    GitHub
-  </button>
+    <a href="mailto:joaopoliveirapaulino@gmail.com" class="email-link">
+      <i class="fas fa-envelope"></i> joaopoliveirapaulino&#64;gmail.com
+    </a>
+
+    <button (click)="openLink('https://github.com/JoaoPOPaulino')">
+      <i class="fab fa-github"></i> GitHub
+    </button>
+  </div>
 </section>

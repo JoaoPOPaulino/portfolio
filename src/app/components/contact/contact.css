@@ -1,0 +1,66 @@
+/* contact.component.css */
+
+section {
+  background-color: var(--bg-alt);
+}
+
+.contact-box {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  max-width: 560px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-box p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.contact-box button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  align-self: flex-start;
+}
+
+.contact-box button:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .contact-box {
+    padding: 32px;
+  }
+}

@@ -1,0 +1,135 @@
+/* hero.component.css */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+/* Blobs decorativos de fundo */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── TEXTO ── */
+.greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.greeting::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 12px 0 24px;
+}
+
+.description {
+  max-width: 480px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 36px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── IMAGEM ── */
+.hero-image {
+  flex-shrink: 0;
+}
+
+.image-border {
+  width: 320px;
+  height: 320px;
+  border: 3px solid var(--primary);
+  overflow: hidden;
+  animation: morphing 8s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(13, 148, 136, 0.06));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-border img {
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+}
+
+@keyframes morphing {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 968px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .greeting     { justify-content: center; }
+  .hero-buttons { justify-content: center; }
+  .description  { margin-inline: auto; }
+
+  .image-border {
+    width: 240px;
+    height: 240px;
+  }
+}

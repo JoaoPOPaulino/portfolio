@@ -1,12 +1,33 @@
-<section>
-  <h1>João Pedro de Oliveira Paulino</h1>
-  <h3>Desenvolvedor Fullstack em formação</h3>
+<!-- hero.component.html -->
+<section class="hero">
+  <div class="hero-container">
 
-  <p>
-    Estudante de Sistemas de Informação com experiência em suporte técnico e desenvolvimento web.
-  </p>
+    <div class="hero-content">
+      <p class="greeting">Olá, eu sou</p>
+      <h1><span>João Pedro</span><br>de Oliveira Paulino</h1>
+      <h3 class="subtitle">Desenvolvedor Fullstack em formação</h3>
 
-  <button onclick="window.open('https://github.com/JoaoPOPaulino')">
-    GitHub
-  </button>
+      <p class="description">
+        Estudante de Sistema de Informação, desenvolvendo projetos práticos
+        e ampliando conhecimento em desenvolvimento backend e frontend.
+        Busco evoluir continuamente pro meio de estudo e experiência.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-primary" (click)="openLink('https://github.com/JoaoPOPaulino')">
+          <i class="fab fa-github"></i> GitHub
+        </button>
+        <button class="btn-secondary" (click)="downloadCV()">
+          <i class="fas fa-download"></i> Download CV
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="image-border">
+        <img src="joao.jpg" alt="Foto de João Pedro">
+      </div>
+    </div>
+
+  </div>
 </section>

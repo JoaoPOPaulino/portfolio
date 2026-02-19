@@ -1,20 +1,41 @@
+/* navbar.component.css */
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
-  background-color: #0f172a;
+  padding: 18px 10%;
+  background: var(--bg-nav);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: fixed;
-  width: 80%;
+  width: 100%;
   top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
 }
 
-a {
-  color: #f1f5f9;
+nav h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+nav h2 span {
+  color: var(--primary);
+}
+
+nav div a {
+  font-weight: 500;
+  color: var(--text-muted);
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 32px;
+  font-size: 0.95rem;
+  transition: color 0.2s;
 }
 
-a:hover {
-  color: #3b82f6;
+nav div a:hover {
+  color: var(--primary);
 }
