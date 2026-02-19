@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: #0f172a;
+  position: fixed;
+  width: 80%;
+  top: 0;
+}
+
+a {
+  color: #f1f5f9;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+a:hover {
+  color: #3b82f6;
+}
