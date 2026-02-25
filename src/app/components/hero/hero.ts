@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { TranslationService } from '../../service/translation.service';
 
+
 @Component({
   selector: 'app-hero',
   imports: [],
@@ -16,9 +17,14 @@ export class Hero {
   }
 
   downloadCV() {
+    const isEn = this.translationService.currentLang === 'en';
+    const file = isEn
+      ? 'CV_Joao_Pedro_EN.pdf'
+      : 'Curriculo_Joao_Pedro_Paulino.pdf';
+
     const link = document.createElement('a');
-    link.href = 'Curriculo_Joao_Pedro_Paulino.pdf';
-    link.download = 'Curriculo_Joao_Pedro_Paulino.pdf';
+    link.href = file;
+    link.download = file;
     link.click();
   }
 }
