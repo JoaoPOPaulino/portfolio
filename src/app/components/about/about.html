@@ -1,13 +1,8 @@
 <!-- about.component.html -->
 <section id="about">
-  <span class="section-tag">Sobre</span>
-  <h2>Sobre mim</h2>
+  <span class="section-tag">{{ translationService.t('about.tag') }}</span>
+  <h2>{{ translationService.t('about.title') }}</h2>
   <div class="section-divider"></div>
 
-  <p>
-  Atualmente atuando como estagiário na área de TI, com vivência em suporte técnico,
-  infraestrutura e desenvolvimento web. Tenho buscado ampliar meus conhecimentos
-  por meio de projetos práticos e estudo constante, sempre aberto a aprender
-  novas tecnologias e boas práticas de desenvolvimento.
-  </p>
+  <p>{{ translationService.t('about.text') }}</p>
 </section>

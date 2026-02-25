@@ -1,24 +1,54 @@
 <!-- projects.component.html -->
 <section id="projects">
-  <span class="section-tag">Portfólio</span>
-  <h2>Projetos</h2>
+  <span class="section-tag">{{ translationService.t('projects.tag') }}</span>
+  <h2>{{ translationService.t('projects.title') }}</h2>
   <div class="section-divider"></div>
 
   <div class="projects-grid">
 
-    <div class="card">
-      <h3>Site Institucional — Django</h3>
-      <p>Desenvolvimento de site institucional com painel administrativo.</p>
-      <button (click)="openLink('https://github.com/JoaoPOPaulino/apasi')">
-        <i class="fab fa-github"></i> Ver Código
+    <!-- Estética Agenda — SaaS (destaque) -->
+    <div class="card saas-card">
+      <span class="card-badge">
+        <i class="fas fa-rocket"></i> {{ translationService.t('projects.saas_badge') }}
+      </span>
+      <h3>{{ translationService.t('projects.saas_title') }}</h3>
+      <p>{{ translationService.t('projects.saas_desc') }}</p>
+      <div class="card-tags">
+        <span class="card-tag">React</span>
+        <span class="card-tag">Node.js</span>
+        <span class="card-tag">Supabase</span>
+        <span class="card-tag">TypeScript</span>
+        <span class="card-tag">PostgreSQL</span>
+        <span class="card-tag">SaaS</span>
+      </div>
+      <button (click)="openLink('https://github.com/JoaoPOPaulino/estetica-agenda')">
+        <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
       </button>
     </div>
 
     <div class="card">
-      <h3>Portfólio Angular</h3>
-      <p>Aplicação desenvolvida com Angular e deploy no GitHub Pages.</p>
+      <h3>{{ translationService.t('projects.django_title') }}</h3>
+      <p>{{ translationService.t('projects.django_desc') }}</p>
+      <div class="card-tags">
+        <span class="card-tag">Python</span>
+        <span class="card-tag">Django</span>
+        <span class="card-tag">PostgreSQL</span>
+      </div>
+      <button (click)="openLink('https://github.com/JoaoPOPaulino/apasi')">
+        <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>{{ translationService.t('projects.portfolio_title') }}</h3>
+      <p>{{ translationService.t('projects.portfolio_desc') }}</p>
+      <div class="card-tags">
+        <span class="card-tag">Angular</span>
+        <span class="card-tag">TypeScript</span>
+        <span class="card-tag">GitHub Pages</span>
+      </div>
       <button (click)="openLink('https://github.com/JoaoPOPaulino/portfolio')">
-        <i class="fab fa-github"></i> Ver Código
+        <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
       </button>
     </div>
 

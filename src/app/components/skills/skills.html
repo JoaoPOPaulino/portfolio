@@ -1,11 +1,11 @@
-<!-- skill.component.html -->
+<!-- skills.component.html -->
 <section id="skills">
-  <span class="section-tag">Tecnologias</span>
-  <h2>Skills & Conhecimentos</h2>
+  <span class="section-tag">{{ translationService.t('skills.tag') }}</span>
+  <h2>{{ translationService.t('skills.title') }}</h2>
   <div class="section-divider"></div>
 
   <p class="skills-description">
-    Tecnologias e conceitos que venho estudando e aplicando em projetos práticos.
+    {{ translationService.t('skills.description') }}
   </p>
 
   <div class="skills-grid">
@@ -13,12 +13,13 @@
     <div class="skill-group">
       <div class="skill-group-header">
         <i class="fas fa-code"></i>
-        <h3>Linguagens</h3>
+        <h3>{{ translationService.t('skills.languages') }}</h3>
       </div>
       <div class="skill-badges">
         <span class="skill-badge">Java</span>
         <span class="skill-badge">Python</span>
         <span class="skill-badge">TypeScript</span>
+        <span class="skill-badge">JavaScript</span>
         <span class="skill-badge">Dart</span>
       </div>
     </div>
@@ -26,10 +27,12 @@
     <div class="skill-group">
       <div class="skill-group-header">
         <i class="fas fa-layer-group"></i>
-        <h3>Frameworks</h3>
+        <h3>{{ translationService.t('skills.frameworks') }}</h3>
       </div>
       <div class="skill-badges">
         <span class="skill-badge">Angular</span>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">Node.js</span>
         <span class="skill-badge">Django</span>
         <span class="skill-badge">Flutter</span>
       </div>
@@ -38,18 +41,33 @@
     <div class="skill-group">
       <div class="skill-group-header">
         <i class="fas fa-database"></i>
-        <h3>Banco de Dados</h3>
+        <h3>{{ translationService.t('skills.databases') }}</h3>
       </div>
       <div class="skill-badges">
         <span class="skill-badge">PostgreSQL</span>
         <span class="skill-badge">MySQL</span>
+        <span class="skill-badge">Supabase</span>
+        <span class="skill-badge">Firebase</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-header">
+        <i class="fas fa-cloud"></i>
+        <h3>{{ translationService.t('skills.cloud') }}</h3>
+      </div>
+      <div class="skill-badges">
+        <span class="skill-badge">Supabase</span>
+        <span class="skill-badge">Firebase</span>
+        <span class="skill-badge">Firestore</span>
+        <span class="skill-badge">Firebase Auth</span>
       </div>
     </div>
 
     <div class="skill-group">
       <div class="skill-group-header">
         <i class="fas fa-lightbulb"></i>
-        <h3>Conceitos & Práticas</h3>
+        <h3>{{ translationService.t('skills.concepts') }}</h3>
       </div>
       <div class="skill-badges">
         <span class="skill-badge">APIs REST</span>
@@ -58,6 +76,7 @@
         <span class="skill-badge">GitHub Pages</span>
         <span class="skill-badge">DevOps</span>
         <span class="skill-badge">Clean Code</span>
+        <span class="skill-badge">SaaS</span>
       </div>
     </div>
 

@@ -1,10 +1,23 @@
-<!-- navbar.component.html -->
 <nav>
   <h2>João<span> Pedro</span></h2>
-  <div>
-    <a href="#about">Sobre</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projetos</a>
-    <a href="#contact">Contato</a>
+
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about">{{ translationService.t('nav.about') }}</a>
+      <a href="#skills">{{ translationService.t('nav.skills') }}</a>
+      <a href="#projects">{{ translationService.t('nav.projects') }}</a>
+      <a href="#contact">{{ translationService.t('nav.contact') }}</a>
+    </div>
+
+    <div class="lang-toggle">
+      <button
+        class="lang-btn"
+        [class.active]="currentLang === 'pt'"
+        (click)="setLang('pt')">PT</button>
+      <button
+        class="lang-btn"
+        [class.active]="currentLang === 'en'"
+        (click)="setLang('en')">EN</button>
+    </div>
   </div>
 </nav>

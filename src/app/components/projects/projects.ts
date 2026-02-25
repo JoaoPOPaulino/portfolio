@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../../service/translation.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './projects.css',
 })
 export class Projects {
+
+  constructor(public translationService: TranslationService) {}
 
   openLink(url: string) {
   window.open(url, '_blank');
