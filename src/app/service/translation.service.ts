@@ -32,7 +32,7 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'projects.tag': 'Portfólio',
     'projects.title': 'Projetos',
-    'projects.saas_badge': 'Em desenvolvimento',
+    'projects.saas_badge': 'Em produção',
     'projects.saas_title': 'Estética Agenda — SaaS',
     'projects.saas_desc':
       'Plataforma SaaS de agendamento online para clínicas e salões de estética. Possui autenticação com controle de acesso por roles (cliente, profissional, admin), Row Level Security no banco de dados, painel da profissional com agenda em tempo real, cadastro de serviços, clientes walk-in e gestão de status de atendimentos. Interface mobile-first com design system próprio.',
@@ -41,6 +41,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.portfolio_title': 'Portfólio Angular',
     'projects.portfolio_desc': 'Aplicação desenvolvida com Angular e deploy no GitHub Pages.',
     'projects.view_code': 'Ver Código',
+    'projects.view_site': 'Ver Site',
 
     'contact.tag': 'Contato',
     'contact.title': 'Vamos conversar?',
@@ -74,7 +75,7 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'projects.tag': 'Portfolio',
     'projects.title': 'Projects',
-    'projects.saas_badge': 'In development',
+    'projects.saas_badge': 'Live',
     'projects.saas_title': 'Estetica Agenda — SaaS',
     'projects.saas_desc':
       'Online scheduling SaaS platform for aesthetic clinics and beauty salons. Features role-based authentication (client, professional, admin), Row Level Security at the database level, a professional dashboard with real-time schedule management, service registration, walk-in client handling, and appointment status tracking. Mobile-first interface with a custom design system.',
@@ -83,6 +84,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.portfolio_title': 'Angular Portfolio',
     'projects.portfolio_desc': 'Application built with Angular and deployed on GitHub Pages.',
     'projects.view_code': 'View Code',
+    'projects.view_site': 'View Site',
 
     'contact.tag': 'Contact',
     'contact.title': "Let's talk?",

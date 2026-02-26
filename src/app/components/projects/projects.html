@@ -21,10 +21,15 @@
         <span class="card-tag">PostgreSQL</span>
         <span class="card-tag">SaaS</span>
       </div>
-      <button (click)="openLink('https://github.com/JoaoPOPaulino/estetica-agenda')">
-        <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-      </button>
-    </div>
+            <div class="card-buttons">
+          <button (click)="openLink('https://github.com/JoaoPOPaulino/estetica-agenda')">
+            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
+          </button>
+          <button class="btn-live" (click)="openLink('https://thamyres-ribeiro.vercel.app')">
+            <i class="fas fa-external-link-alt"></i> {{ translationService.t('projects.view_site') }}
+          </button>
+        </div>
+      </div>
 
     <div class="card">
       <h3>{{ translationService.t('projects.django_title') }}</h3>
