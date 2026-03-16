@@ -9,7 +9,7 @@ import { Contact } from "./components/contact/contact";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Hero, About, Projects, Skills, Contact],
+  imports: [Navbar, Hero, About, Projects, Skills, Contact],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

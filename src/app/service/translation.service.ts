@@ -45,7 +45,18 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'contact.tag': 'Contato',
     'contact.title': 'Vamos conversar?',
-    'contact.text': 'Estou aberto a novas oportunidades, projetos e colaborações. Entre em contato!',
+    'contact.text': 'Estou aberto a novas oportunidades, projetos e colaborações. Preencha o formulário ou entre em contato pelos links abaixo.',
+    'contact.label_name': 'Nome',
+    'contact.label_email': 'E-mail',
+    'contact.label_message': 'Mensagem',
+    'contact.placeholder_name': 'Seu nome',
+    'contact.placeholder_email': 'seu@email.com',
+    'contact.placeholder_message': 'Escreva sua mensagem...',
+    'contact.btn_send': 'Enviar mensagem',
+    'contact.btn_sending': 'Enviando...',
+    'contact.success': 'Mensagem enviada com sucesso! Responderei em breve.',
+    'contact.error': 'Ocorreu um erro. Tente novamente ou envie por e-mail.',
+ 
   },
   en: {
     'nav.about': 'About',
@@ -88,7 +99,17 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'contact.tag': 'Contact',
     'contact.title': "Let's talk?",
-    'contact.text': "I'm open to new opportunities, projects, and collaborations. Get in touch!",
+    'contact.text': "I'm open to new opportunities, projects, and collaborations. Fill out the form or reach out through the links below.",
+    'contact.label_name': 'Name',
+    'contact.label_email': 'Email',
+    'contact.label_message': 'Message',
+    'contact.placeholder_name': 'Your name',
+    'contact.placeholder_email': 'your@email.com',
+    'contact.placeholder_message': 'Write your message...',
+    'contact.btn_send': 'Send message',
+    'contact.btn_sending': 'Sending...',
+    'contact.success': 'Message sent successfully! I will reply soon.',
+    'contact.error': 'Something went wrong. Try again or send via email.',
   },
 };
 

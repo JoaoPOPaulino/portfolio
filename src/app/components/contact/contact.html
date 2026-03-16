@@ -4,15 +4,121 @@
   <h2>{{ translationService.t('contact.title') }}</h2>
   <div class="section-divider"></div>
 
-  <div class="contact-box">
-    <p>{{ translationService.t('contact.text') }}</p>
+  <div class="contact-layout">
 
-    <a href="mailto:joaopoliveirapaulino@gmail.com" class="email-link">
-      <i class="fas fa-envelope"></i> joaopoliveirapaulino&#64;gmail.com
-    </a>
+    <!-- Lado esquerdo: info -->
+    <div class="contact-info">
+      <p class="contact-text">{{ translationService.t('contact.text') }}</p>
 
-    <button (click)="openLink('https://github.com/JoaoPOPaulino')">
-      <i class="fab fa-github"></i> GitHub
-    </button>
+      <div class="contact-links">
+        <a href="mailto:joaopoliveirapaulino@gmail.com" class="contact-link">
+          <div class="contact-link-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">Email</span>
+            <span>joaopoliveirapaulino@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/JoaoPOPaulino" target="_blank" class="contact-link">
+          <div class="contact-link-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">GitHub</span>
+            <span>github.com/JoaoPOPaulino</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/joão-pedro-de-oliveira-paulino-289502325/" target="_blank" class="contact-link">
+          <div class="contact-link-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">Linkedin</span>
+            <span>https://www.linkedin.com/in/joão-pedro-de-oliveira-paulino-289502325/</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/jp.oliveirapaulino/" target="_blank" class="contact-link">
+          <div class="contact-link-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-link-text">
+            <span class="contact-link-label">Instagram</span>
+            <span>https://www.instagram.com/jp.oliveirapaulino/</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Lado direito: formulário -->
+    <form class="contact-form" (ngSubmit)="sendEmail()">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">{{ translationService.t('contact.label_name') }}</label>
+          <input
+            id="name"
+            type="text"
+            [(ngModel)]="name"
+            name="name"
+            [placeholder]="translationService.t('contact.placeholder_name')"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">{{ translationService.t('contact.label_email') }}</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            [placeholder]="translationService.t('contact.placeholder_email')"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">{{ translationService.t('contact.label_message') }}</label>
+        <textarea
+          id="message"
+          [(ngModel)]="message"
+          name="message"
+          rows="5"
+          [placeholder]="translationService.t('contact.placeholder_message')"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn-submit" [disabled]="status === 'sending'">
+          <ng-container *ngIf="status !== 'sending'">
+            <i class="fas fa-paper-plane"></i>
+            {{ translationService.t('contact.btn_send') }}
+          </ng-container>
+          <ng-container *ngIf="status === 'sending'">
+            <i class="fas fa-spinner fa-spin"></i>
+            {{ translationService.t('contact.btn_sending') }}
+          </ng-container>
+        </button>
+
+        <div class="form-feedback success" *ngIf="status === 'success'">
+          <i class="fas fa-check-circle"></i>
+          {{ translationService.t('contact.success') }}
+        </div>
+
+        <div class="form-feedback error" *ngIf="status === 'error'">
+          <i class="fas fa-times-circle"></i>
+          {{ translationService.t('contact.error') }}
+        </div>
+      </div>
+
+    </form>
+
   </div>
 </section>
