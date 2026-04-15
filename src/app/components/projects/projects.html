@@ -31,6 +31,54 @@
         </div>
       </div>
 
+      <!-- Clínica Estética — Landing Page -->
+      <div class="card saas-card">
+        <span class="card-badge">
+          <i class="fas fa-rocket"></i> {{ translationService.t('projects.estetica_badge') }}
+        </span>
+        <h3>{{ translationService.t('projects.estetica_title') }}</h3>
+        <p>{{ translationService.t('projects.estetica_desc') }}</p>
+        <div class="card-tags">
+          <span class="card-tag">React</span>
+          <span class="card-tag">Vite</span>
+          <span class="card-tag">Firebase Hosting</span>
+          <span class="card-tag">Cal.com</span>
+          <span class="card-tag">TypeScript</span>
+          <span class="card-tag">Tailwind CSS</span>
+        </div>
+        <div class="card-buttons">
+          <button (click)="openLink('https://github.com/JoaoPOPaulino/geovana-teles')">
+            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
+          </button>
+          <button class="btn-live" (click)="openLink('https://geovana-teles.web.app/')">
+            <i class="fas fa-external-link-alt"></i> {{ translationService.t('projects.view_site') }}
+          </button>
+        </div>
+      </div>
+
+          <!-- Meu Pudizim — Landing Page -->
+      <div class="card">
+        <span class="card-badge">
+          <i class="fas fa-rocket"></i> {{ translationService.t('projects.pudim_badge') }}
+        </span>
+        <h3>{{ translationService.t('projects.pudim_title') }}</h3>
+        <p>{{ translationService.t('projects.pudim_desc') }}</p>
+        <div class="card-tags">
+          <span class="card-tag">Astro</span>
+          <span class="card-tag">JavaScript</span>
+          <span class="card-tag">CSS</span>
+          <span class="card-tag">Vercel</span>
+        </div>
+        <div class="card-buttons">
+          <button (click)="openLink('https://github.com/JoaoPOPaulino/meu-pudizim')">
+            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
+          </button>
+          <button class="btn-live" (click)="openLink('https://meu-pudizim.vercel.app')">
+            <i class="fas fa-external-link-alt"></i> {{ translationService.t('projects.view_site') }}
+          </button>
+        </div>
+      </div>
+
     <div class="card">
       <h3>{{ translationService.t('projects.django_title') }}</h3>
       <p>{{ translationService.t('projects.django_desc') }}</p>

@@ -36,6 +36,14 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.saas_title': 'Estética Agenda — SaaS',
     'projects.saas_desc':
       'Plataforma SaaS de agendamento online para clínicas e salões de estética. Possui autenticação com controle de acesso por roles (cliente, profissional, admin), Row Level Security no banco de dados, painel da profissional com agenda em tempo real, cadastro de serviços, clientes walk-in e gestão de status de atendimentos. Interface mobile-first com design system próprio.',
+    'projects.estetica_badge': 'Em produção',
+    'projects.estetica_title': 'Clínica Estética — Landing Page',
+    'projects.estetica_desc':
+    'Landing page para clínica de estética facial em Palmas, TO. Design elegante e mobile-first com paleta bordeaux e dourado, integração com WhatsApp, agendamento via Cal.com e deploy no Firebase Hosting. Desenvolvida com React + Vite.',
+    'projects.pudim_badge': 'Em produção',
+    'projects.pudim_title': 'Meu Pudizim — Landing Page',
+    'projects.pudim_desc':
+    'Landing page para confeitaria artesanal de pudins em Canoas, RS. Design aconchegante com integração direta ao WhatsApp para pedidos, cardápio e seções de história da marca. Desenvolvida com Astro e deploy no Vercel.',
     'projects.django_title': 'Site Institucional — Django',
     'projects.django_desc': 'Desenvolvimento de site institucional com painel administrativo.',
     'projects.portfolio_title': 'Portfólio Angular',
@@ -88,8 +96,16 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.title': 'Projects',
     'projects.saas_badge': 'Live',
     'projects.saas_title': 'Estetica Agenda — SaaS',
+    'projects.estetica_badge': 'Live',
+    'projects.estetica_title': 'Aesthetic Clinic — Landing Page',
+    'projects.estetica_desc':
+    'Landing page for a facial aesthetics clinic in Palmas/TO, Brazil. Elegant mobile-first design with a bordeaux and gold palette, WhatsApp integration, scheduling via Cal.com, and deployed on Firebase Hosting. Built with React and Vite.',
     'projects.saas_desc':
       'Online scheduling SaaS platform for aesthetic clinics and beauty salons. Features role-based authentication (client, professional, admin), Row Level Security at the database level, a professional dashboard with real-time schedule management, service registration, walk-in client handling, and appointment status tracking. Mobile-first interface with a custom design system.',
+    'projects.pudim_badge': 'Live',
+    'projects.pudim_title': 'Meu Pudizim — Landing Page',
+    'projects.pudim_desc':
+    'Landing page for a homemade pudding bakery in Canoas/RS, Brazil. Warm and cozy design with direct WhatsApp order integration, menu section, and brand story. Built with Astro and deployed on Vercel.',
     'projects.django_title': 'Institutional Website — Django',
     'projects.django_desc': 'Institutional website development with an admin panel.',
     'projects.portfolio_title': 'Angular Portfolio',
