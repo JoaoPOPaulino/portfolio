@@ -23,7 +23,8 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'skills.tag': 'Tecnologias',
     'skills.title': 'Skills & Conhecimentos',
-    'skills.description': 'Tecnologias e conceitos que venho estudando e aplicando em projetos práticos.',
+    'skills.description':
+      'Tecnologias e conceitos que venho estudando e aplicando em projetos práticos.',
     'skills.languages': 'Linguagens',
     'skills.frameworks': 'Frameworks',
     'skills.databases': 'Banco de Dados',
@@ -32,28 +33,45 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'projects.tag': 'Portfólio',
     'projects.title': 'Projetos',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.saas_badge': 'Em produção',
-    'projects.saas_title': 'Estética Agenda — SaaS',
+    'projects.saas_title': 'Estética Agenda — Sistema Web',
     'projects.saas_desc':
-      'Plataforma SaaS de agendamento online para clínicas e salões de estética. Possui autenticação com controle de acesso por roles (cliente, profissional, admin), Row Level Security no banco de dados, painel da profissional com agenda em tempo real, cadastro de serviços, clientes walk-in e gestão de status de atendimentos. Interface mobile-first com design system próprio.',
+      'Sistema de agendamento online desenvolvido para clínica de estética. Possui autenticação com controle de acesso por roles (cliente, profissional, admin), Row Level Security no banco de dados, painel da profissional com agenda em tempo real, cadastro de serviços, clientes walk-in e gestão de status de atendimentos. Interface mobile-first com design system próprio.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.estetica_badge': 'Em produção',
     'projects.estetica_title': 'Clínica Estética — Landing Page',
     'projects.estetica_desc':
-    'Landing page para clínica de estética facial em Palmas, TO. Design elegante e mobile-first com paleta bordeaux e dourado, integração com WhatsApp, agendamento via Cal.com e deploy no Firebase Hosting. Desenvolvida com React + Vite.',
+      'Landing page para clínica de estética facial em Palmas, TO. Design elegante e mobile-first com paleta bordeaux e dourado, integração com WhatsApp, agendamento via Cal.com e deploy no Firebase Hosting. Desenvolvida com React + Vite.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.pudim_badge': 'Em produção',
     'projects.pudim_title': 'Meu Pudizim — Landing Page',
     'projects.pudim_desc':
-    'Landing page para confeitaria artesanal de pudins em Canoas, RS. Design aconchegante com integração direta ao WhatsApp para pedidos, cardápio e seções de história da marca. Desenvolvida com Astro e deploy no Vercel.',
+      'Landing page para confeitaria artesanal de pudins em Canoas, RS. Design aconchegante com integração direta ao WhatsApp para pedidos, cardápio e seções de história da marca. Desenvolvida com Astro e deploy no Vercel.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.eletricista_badge': 'Em produção',
+    'projects.eletricista_title': 'A.F Eletricista — Landing Page',
+    'projects.eletricista_desc':
+      'Landing page para eletricista autônomo em Palmas, TO. Design escuro e profissional com formulário de orçamento integrado ao WhatsApp, listagem de serviços e contato direto. Desenvolvida com React, Vite e Tailwind CSS.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.django_title': 'Site Institucional — Django',
     'projects.django_desc': 'Desenvolvimento de site institucional com painel administrativo.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.portfolio_title': 'Portfólio Angular',
     'projects.portfolio_desc': 'Aplicação desenvolvida com Angular e deploy no GitHub Pages.',
     'projects.view_code': 'Ver Código',
     'projects.view_site': 'Ver Site',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.rifa_badge': 'Em produção',
+    'projects.rifa_title': 'Rifa Digital — Plataforma com Painel Admin',
+    'projects.rifa_desc':
+      'Aplicação web para gestão de rifas com seleção visual de números, reserva via WhatsApp e painel administrativo em tempo real. Possui autenticação com Firebase, controle de status dos números, edição de compradores, filtros, paginação e integração com Firestore.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
 
     'contact.tag': 'Contato',
     'contact.title': 'Vamos conversar?',
-    'contact.text': 'Estou aberto a novas oportunidades, projetos e colaborações. Preencha o formulário ou entre em contato pelos links abaixo.',
+    'contact.text':
+      'Estou aberto a novas oportunidades, projetos e colaborações. Preencha o formulário ou entre em contato pelos links abaixo.',
     'contact.label_name': 'Nome',
     'contact.label_email': 'E-mail',
     'contact.label_message': 'Mensagem',
@@ -64,7 +82,6 @@ const translations: Record<Lang, Record<string, string>> = {
     'contact.btn_sending': 'Enviando...',
     'contact.success': 'Mensagem enviada com sucesso! Responderei em breve.',
     'contact.error': 'Ocorreu um erro. Tente novamente ou envie por e-mail.',
- 
   },
   en: {
     'nav.about': 'About',
@@ -85,7 +102,8 @@ const translations: Record<Lang, Record<string, string>> = {
 
     'skills.tag': 'Technologies',
     'skills.title': 'Skills & Knowledge',
-    'skills.description': 'Technologies and concepts I have been studying and applying in practical projects.',
+    'skills.description':
+      'Technologies and concepts I have been studying and applying in practical projects.',
     'skills.languages': 'Languages',
     'skills.frameworks': 'Frameworks',
     'skills.databases': 'Databases',
@@ -95,27 +113,43 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.tag': 'Portfolio',
     'projects.title': 'Projects',
     'projects.saas_badge': 'Live',
-    'projects.saas_title': 'Estetica Agenda — SaaS',
+    'projects.saas_title': 'Estetica Agenda — Web System',
+    'projects.saas_desc':
+      'Online scheduling system built for an aesthetic clinic. Features role-based authentication (client, professional, admin), Row Level Security at the database level, a professional dashboard with real-time schedule management, service registration, walk-in client handling, and appointment status tracking. Mobile-first interface with a custom design system.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.estetica_badge': 'Live',
     'projects.estetica_title': 'Aesthetic Clinic — Landing Page',
     'projects.estetica_desc':
-    'Landing page for a facial aesthetics clinic in Palmas/TO, Brazil. Elegant mobile-first design with a bordeaux and gold palette, WhatsApp integration, scheduling via Cal.com, and deployed on Firebase Hosting. Built with React and Vite.',
-    'projects.saas_desc':
-      'Online scheduling SaaS platform for aesthetic clinics and beauty salons. Features role-based authentication (client, professional, admin), Row Level Security at the database level, a professional dashboard with real-time schedule management, service registration, walk-in client handling, and appointment status tracking. Mobile-first interface with a custom design system.',
+      'Landing page for a facial aesthetics clinic in Palmas/TO, Brazil. Elegant mobile-first design with a bordeaux and gold palette, WhatsApp integration, scheduling via Cal.com, and deployed on Firebase Hosting. Built with React and Vite.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.pudim_badge': 'Live',
     'projects.pudim_title': 'Meu Pudizim — Landing Page',
     'projects.pudim_desc':
-    'Landing page for a homemade pudding bakery in Canoas/RS, Brazil. Warm and cozy design with direct WhatsApp order integration, menu section, and brand story. Built with Astro and deployed on Vercel.',
+      'Landing page for a homemade pudding bakery in Canoas/RS, Brazil. Warm and cozy design with direct WhatsApp order integration, menu section, and brand story. Built with Astro and deployed on Vercel.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.eletricista_badge': 'Live',
+    'projects.eletricista_title': 'A.F Eletricista — Landing Page',
+    'projects.eletricista_desc':
+    'Landing page for a freelance electrician in Palmas, Brazil. Dark and professional design with a WhatsApp-integrated quote form, service listing, and direct contact. Built with React, Vite, and Tailwind CSS.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.django_title': 'Institutional Website — Django',
     'projects.django_desc': 'Institutional website development with an admin panel.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.portfolio_title': 'Angular Portfolio',
     'projects.portfolio_desc': 'Application built with Angular and deployed on GitHub Pages.',
     'projects.view_code': 'View Code',
     'projects.view_site': 'View Site',
-
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.rifa_badge': 'Live',
+    'projects.rifa_title': 'Digital Raffle — Platform with Admin Panel',
+    'projects.rifa_desc':
+      'Web application for raffle management with visual number selection, WhatsApp reservation flow, and a real-time admin dashboard. Features Firebase authentication, number status control, buyer editing, filters, pagination, and Firestore integration.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    
     'contact.tag': 'Contact',
     'contact.title': "Let's talk?",
-    'contact.text': "I'm open to new opportunities, projects, and collaborations. Fill out the form or reach out through the links below.",
+    'contact.text':
+      "I'm open to new opportunities, projects, and collaborations. Fill out the form or reach out through the links below.",
     'contact.label_name': 'Name',
     'contact.label_email': 'Email',
     'contact.label_message': 'Message',
