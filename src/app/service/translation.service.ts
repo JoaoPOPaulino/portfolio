@@ -67,6 +67,11 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.rifa_desc':
       'Aplicação web para gestão de rifas com seleção visual de números, reserva via WhatsApp e painel administrativo em tempo real. Possui autenticação com Firebase, controle de status dos números, edição de compradores, filtros, paginação e integração com Firestore.',
     //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.wedding_title': 'Site do Casamento — João Pedro & Geovana',
+    'projects.wedding_desc':
+      'Plataforma completa para o nosso casamento: RSVP com código único, dashboard administrativo, gestão de convidados, finanças em tempo real, lista de presentes e design romântico.',
+    'projects.wedding_badge': 'Projeto Pessoal',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
 
     'contact.tag': 'Contato',
     'contact.title': 'Vamos conversar?',
@@ -130,7 +135,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.eletricista_badge': 'Live',
     'projects.eletricista_title': 'A.F Eletricista — Landing Page',
     'projects.eletricista_desc':
-    'Landing page for a freelance electrician in Palmas, Brazil. Dark and professional design with a WhatsApp-integrated quote form, service listing, and direct contact. Built with React, Vite, and Tailwind CSS.',
+      'Landing page for a freelance electrician in Palmas, Brazil. Dark and professional design with a WhatsApp-integrated quote form, service listing, and direct contact. Built with React, Vite, and Tailwind CSS.',
     //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.django_title': 'Institutional Website — Django',
     'projects.django_desc': 'Institutional website development with an admin panel.',
@@ -145,7 +150,12 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.rifa_desc':
       'Web application for raffle management with visual number selection, WhatsApp reservation flow, and a real-time admin dashboard. Features Firebase authentication, number status control, buyer editing, filters, pagination, and Firestore integration.',
     //------------------------------------------------------------------------------------------------------------------------------------------------
-    
+    'projects.wedding_title': 'Wedding Website — João Pedro & Geovana',
+    'projects.wedding_desc':
+      'Complete platform for our wedding: RSVP system with unique codes, real-time admin dashboard, guest management, financial tracking, interactive gift list, and elegant design.',
+    'projects.wedding_badge': 'Personal Project',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+
     'contact.tag': 'Contact',
     'contact.title': "Let's talk?",
     'contact.text':

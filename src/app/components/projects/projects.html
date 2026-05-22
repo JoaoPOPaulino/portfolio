@@ -185,5 +185,34 @@
         </div>
       </div>
     }
+
+    <!-- Site do Casamento -->
+    @if (isVisible('pessoal')) {
+      <div class="card">
+        <span class="card-badge"> <i class="fas fa-heart"></i> Projeto Pessoal </span>
+        <h3>Site do Casamento — João Pedro & Geovana</h3>
+        <p>
+          Plataforma completa para o nosso casamento: sistema de RSVP com código único, dashboard
+          administrativo em tempo real, gestão de convidados, controle financeiro com gráficos,
+          lista de presentes interativa e página pública elegante.
+        </p>
+        <div class="card-tags">
+          <span class="card-tag">React</span>
+          <span class="card-tag">TypeScript</span>
+          <span class="card-tag">Firebase</span>
+          <span class="card-tag">Zustand</span>
+          <span class="card-tag">Recharts</span>
+          <span class="card-tag">Tailwind CSS</span>
+        </div>
+        <div class="card-buttons">
+          <button (click)="openLink('https://github.com/SEU-USUARIO/site-casamento')">
+            <i class="fab fa-github"></i> Ver Código
+          </button>
+          <button class="btn-live" (click)="openLink('https://SEU-LINK.vercel.app')">
+            <i class="fas fa-external-link-alt"></i> Ver Site
+          </button>
+        </div>
+      </div>
+    }
   </div>
 </section>
