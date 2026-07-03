@@ -214,5 +214,29 @@
         </div>
       </div>
     }
+
+    <!-- Desapego — App Mobile -->
+    @if (isVisible('aplicacoes')) {
+      <div class="card saas-card">
+        <span class="card-badge">
+          <i class="fas fa-mobile-alt"></i> {{ translationService.t('projects.desapego_badge') }}
+        </span>
+        <h3>{{ translationService.t('projects.desapego_title') }}</h3>
+        <p>{{ translationService.t('projects.desapego_desc') }}</p>
+        <div class="card-tags">
+          <span class="card-tag">Flutter</span>
+          <span class="card-tag">Dart</span>
+          <span class="card-tag">Firebase</span>
+          <span class="card-tag">Firestore</span>
+          <span class="card-tag">Gemini API</span>
+          <span class="card-tag">Mobile</span>
+        </div>
+        <div class="card-buttons">
+          <button (click)="openLink('https://github.com/JoaoPOPaulino/desapego_app')">
+            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
+          </button>
+        </div>
+      </div>
+    }
   </div>
 </section>

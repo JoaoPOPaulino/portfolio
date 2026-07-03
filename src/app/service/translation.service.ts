@@ -72,6 +72,11 @@ const translations: Record<Lang, Record<string, string>> = {
       'Plataforma completa para o nosso casamento: RSVP com código único, dashboard administrativo, gestão de convidados, finanças em tempo real, lista de presentes e design romântico.',
     'projects.wedding_badge': 'Projeto Pessoal',
     //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.desapego_badge': 'Projeto Acadêmico',
+    'projects.desapego_title': 'Desapego — Aplicativo Mobile',
+    'projects.desapego_desc':
+      'Aplicativo mobile desenvolvido como projeto da disciplina de Mobile II. A plataforma permite cadastrar, divulgar e encontrar itens usados para venda ou doação, com autenticação de usuários, publicação de anúncios com imagem, categorias, estado de conservação e sugestão de descrição, preço e categoria com IA.',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
 
     'contact.tag': 'Contato',
     'contact.title': 'Vamos conversar?',
@@ -154,6 +159,11 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.wedding_desc':
       'Complete platform for our wedding: RSVP system with unique codes, real-time admin dashboard, guest management, financial tracking, interactive gift list, and elegant design.',
     'projects.wedding_badge': 'Personal Project',
+    //------------------------------------------------------------------------------------------------------------------------------------------------
+    'projects.desapego_badge': 'Academic Project',
+    'projects.desapego_title': 'Desapego — Mobile App',
+    'projects.desapego_desc':
+      'Mobile application developed as a project for the Mobile II course. The platform allows users to register, publish, and find used items for sale or donation, with user authentication, image-based listings, categories, item condition, and AI-powered suggestions for description, price, and category.',
     //------------------------------------------------------------------------------------------------------------------------------------------------
 
     'contact.tag': 'Contact',
