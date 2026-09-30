@@ -1,31 +1,22 @@
-<!-- hero.component.html -->
-<section class="hero">
-  <div class="hero-container">
-
-    <div class="hero-content">
-      <p class="greeting">{{ translationService.t('hero.greeting') }}</p>
-      <h1><span>João Pedro</span><br>de Oliveira Paulino</h1>
-      <h3 class="subtitle">{{ translationService.t('hero.subtitle') }}</h3>
-
-      <p class="description">
-        {{ translationService.t('hero.description') }}
-      </p>
-
-      <div class="hero-buttons">
-        <button class="btn-primary" (click)="openLink('https://github.com/JoaoPOPaulino')">
-          <i class="fab fa-github"></i> GitHub
-        </button>
-        <button class="btn-secondary" (click)="downloadCV()">
-          <i class="fas fa-download"></i> {{ translationService.t('hero.cv') }}
-        </button>
-      </div>
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero-content">
+    <p class="greeting"><span class="status-dot" aria-hidden="true"></span>{{ translationService.t('hero.greeting') }}</p>
+    <h1 id="hero-title">João Pedro<span class="name-dot">.</span></h1>
+    <p class="full-name">de Oliveira Paulino</p>
+    <h2 class="subtitle">{{ translationService.t('hero.subtitle') }}</h2>
+    <p class="description">{{ translationService.t('hero.description') }}</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="#projects">{{ translationService.t('hero.projects') }} <span aria-hidden="true">↗</span></a>
+      <a class="btn-secondary" [href]="translationService.currentLang === 'en' ? 'CV_Joao_Pedro_EN.pdf' : 'Curriculo_Joao_Pedro_Paulino.pdf'" download>{{ translationService.t('hero.cv') }} <span aria-hidden="true">↓</span></a>
     </div>
-
-    <div class="hero-image">
-      <div class="image-border">
-        <img src="joao.jpg" alt="Foto de João Pedro">
-      </div>
+    <div class="hero-links">
+      <a href="https://github.com/JoaoPOPaulino" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>
+      <a href="https://www.linkedin.com/in/joão-pedro-de-oliveira-paulino-289502325/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>
+      <a href="#contact">{{ translationService.t('nav.contact') }} <span aria-hidden="true">→</span></a>
     </div>
-
   </div>
+  <figure class="hero-portrait">
+    <img src="joao.jpg" [alt]="translationService.t('hero.photo')" width="818" height="1280" fetchpriority="high">
+    <figcaption><span class="portrait-index" aria-hidden="true">01 /</span><span>{{ translationService.t('hero.caption') }}</span><span aria-hidden="true">↗</span></figcaption>
+  </figure>
 </section>

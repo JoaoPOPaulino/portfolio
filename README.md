@@ -1,59 +1,29 @@
-# Portfolio
+# Portfólio — João Pedro
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Portfólio em Angular com apresentação pessoal, projetos, filtros por categoria, versões em português e inglês e formulário de contato com EmailJS.
 
-## Development server
-
-To start a local development server, run:
+## Desenvolvimento
 
 ```bash
-ng serve
+npm ci
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Validação
 
 ```bash
-ng generate component component-name
+npm test -- --watch=false
+npm run build:pages
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O build para GitHub Pages usa a base `/portfolio/` e gera os arquivos em `dist/portfolio/browser`. Para hospedagem na raiz de outro domínio, use `npm run build`. Publicar o build é uma etapa separada.
 
-```bash
-ng generate --help
-```
+## Atualizar conteúdo
 
-## Building
+- Projetos e links: `src/app/components/projects/projects.ts`.
+- Textos em português e inglês: `src/app/service/translation.service.ts`.
+- Foto, currículos e imagens: `public/`.
+- Paleta e estilos globais: `src/styles.css`.
+- Contato: `src/app/components/contact/`. O EmailJS mantém o destinatário no template do serviço; não coloque senhas ou chaves privadas no frontend. A configuração pública existente foi preservada.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+O destaque do gerador de orçamentos inclui uma captura com dados fictícios. Atualize a imagem quando houver mudanças relevantes na aplicação. Cadastre apenas links reais; projetos sem demonstração podem exibir somente o código.

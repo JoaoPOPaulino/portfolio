@@ -1,20 +1,20 @@
 // services/translation.service.ts
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 type Lang = 'pt' | 'en';
 
 const translations: Record<Lang, Record<string, string>> = {
   pt: {
     'nav.about': 'Sobre',
-    'nav.skills': 'Skills',
+    "nav.skills": "Tecnologias",
     'nav.projects': 'Projetos',
     'nav.contact': 'Contato',
 
-    'hero.greeting': 'Olá, eu sou',
-    'hero.subtitle': 'Desenvolvedor Fullstack em formação',
-    'hero.description':
-      'Estudante de Sistema de Informação, desenvolvendo projetos práticos e ampliando conhecimento em desenvolvimento backend e frontend. Busco evoluir continuamente por meio de estudo e experiência.',
-    'hero.cv': 'Download CV',
+    "hero.greeting": "Desenvolvimento web · Portfólio",
+    "hero.subtitle": "Desenvolvedor fullstack em formação",
+    "hero.description": "Transformo necessidades do dia a dia em aplicações web. Sou estudante de Sistemas de Informação e estagiário em TI, com projetos que conectam interface, dados e pessoas.",
+    "hero.cv": "Baixar currículo",
 
     'about.tag': 'Sobre',
     'about.title': 'Sobre mim',
@@ -22,9 +22,8 @@ const translations: Record<Lang, Record<string, string>> = {
       'Atualmente atuando como estagiário na área de TI, com vivência em suporte técnico, infraestrutura e desenvolvimento web. Tenho buscado ampliar meus conhecimentos por meio de projetos práticos e estudo constante, sempre aberto a aprender novas tecnologias e boas práticas de desenvolvimento.',
 
     'skills.tag': 'Tecnologias',
-    'skills.title': 'Skills & Conhecimentos',
-    'skills.description':
-      'Tecnologias e conceitos que venho estudando e aplicando em projetos práticos.',
+    "skills.title": "Tecnologias na prática",
+    "skills.description": "Ferramentas que utilizo e estudo. Os projetos acima mostram como aplico esses conhecimentos.",
     'skills.languages': 'Linguagens',
     'skills.frameworks': 'Frameworks',
     'skills.databases': 'Banco de Dados',
@@ -42,7 +41,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.estetica_badge': 'Em produção',
     'projects.estetica_title': 'Clínica Estética — Landing Page',
     'projects.estetica_desc':
-      'Landing page para clínica de estética facial em Palmas, TO. Design elegante e mobile-first com paleta bordeaux e dourado, integração com WhatsApp, agendamento via Cal.com e deploy no Firebase Hosting. Desenvolvida com React + Vite.',
+      'Landing page para clínica de estética facial em Palmas, TO. Design elegante e mobile-first com paleta bordô e dourado, integração com WhatsApp, agendamento via Cal.com e deploy no Firebase Hosting. Desenvolvida com React + Vite.',
     //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.pudim_badge': 'Em produção',
     'projects.pudim_title': 'Meu Pudizim — Landing Page',
@@ -90,20 +89,60 @@ const translations: Record<Lang, Record<string, string>> = {
     'contact.placeholder_message': 'Escreva sua mensagem...',
     'contact.btn_send': 'Enviar mensagem',
     'contact.btn_sending': 'Enviando...',
-    'contact.success': 'Mensagem enviada com sucesso! Responderei em breve.',
-    'contact.error': 'Ocorreu um erro. Tente novamente ou envie por e-mail.',
+    "contact.success": "Mensagem enviada! Obrigado pelo contato.",
+    "contact.error": "Não foi possível enviar. Sua mensagem foi mantida; tente novamente mais tarde.",
+    "common.new_tab": " (abre em nova aba)",
+    "nav.label": "Navegação principal",
+    "nav.home": "João Pedro — início",
+    "nav.language": "Idioma",
+    "nav.menu": "Menu",
+    "nav.close": "Fechar",
+    "nav.skip": "Pular para o conteúdo",
+    "hero.projects": "Conheça meus projetos",
+    "hero.photo": "João Pedro trabalhando em um notebook",
+    "hero.caption": "Aprendendo, construindo e evoluindo.",
+    "projects.intro": "Uma seleção de aplicações e sites que desenvolvi para aprender e resolver problemas reais.",
+    "projects.all": "Todos",
+    "projects.apps": "Aplicações",
+    "projects.landing": "Landing pages",
+    "projects.personal": "Pessoais",
+    "projects.more": "Outros projetos",
+    "projects.filter": "Filtrar projetos",
+    "projects.show_all": "Ver todos os projetos",
+    "projects.show_less": "Mostrar menos",
+    "projects.no_link": "Demonstração pública não disponível.",
+    "projects.featured": "Projeto em destaque",
+    "projects.budget_title": "Gerador de Orçamentos",
+    "projects.budget_intro": "Uma necessidade da oficina do meu pai virou uma ferramenta gratuita, acessível pelo navegador e sem cadastro.",
+    "projects.problem": "O ponto de partida",
+    "projects.solution": "O que construí",
+    "projects.budget_problem": "Meu pai precisava de ajuda para preparar orçamentos. Encontrar uma opção online simples, boa e gratuita nem sempre era fácil.",
+    "projects.budget_solution": "Cadastro de peças e mão de obra, descontos, impressão em PDF, histórico local e backup exportável. Interface responsiva e formulário de contato integrado ao EmailJS.",
+    "projects.budget_limit": "Os dados ficam no navegador, sem sincronização entre dispositivos. Uma versão Android está em estudo.",
+    "projects.try_app": "Testar aplicação",
+    "projects.budget_image": "Prévia real do gerador com um orçamento de demonstração de manutenção automotiva",
+    "projects.budget_caption": "Captura da aplicação · Dados fictícios de demonstração",
+    "about.focus_title": "Da necessidade à solução",
+    "about.focus_text": "Gosto de entender o problema antes de escolher a tecnologia. Meus projetos incluem aplicações web, sites para pequenos negócios e experiências com desenvolvimento mobile.",
+    "about.learning_title": "Aprendizado contínuo",
+    "about.learning_text": "Tenho experiência de estágio em suporte técnico e infraestrutura e venho aprofundando meus conhecimentos em desenvolvimento frontend e backend.",
+    "contact.note": "Seu nome, e-mail e mensagem serão usados para responder ao contato. Não envie senhas ou dados sensíveis.",
+    "contact.linkedin": "Experiência e trajetória",
+    "contact.github": "Código e projetos",
+    "contact.instagram": "Acompanhe meu trabalho",
+    "footer.text": "Desenvolvido por João Pedro com Angular.",
+    "footer.top": "Voltar ao início",
   },
   en: {
     'nav.about': 'About',
-    'nav.skills': 'Skills',
+    "nav.skills": "Technologies",
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
 
-    'hero.greeting': "Hi, I'm",
-    'hero.subtitle': 'Fullstack Developer in training',
-    'hero.description':
-      'Information Systems student, building practical projects and expanding knowledge in backend and frontend development. I seek continuous growth through study and hands-on experience.',
-    'hero.cv': 'Download CV',
+    "hero.greeting": "Web development · Portfolio",
+    "hero.subtitle": "Fullstack developer in training",
+    "hero.description": "I turn everyday needs into web applications. I am an Information Systems student and IT intern, building projects that connect interfaces, data and people.",
+    "hero.cv": "Download CV",
 
     'about.tag': 'About',
     'about.title': 'About me',
@@ -111,9 +150,8 @@ const translations: Record<Lang, Record<string, string>> = {
       'Currently working as an IT intern, with experience in technical support, infrastructure, and web development. I have been expanding my knowledge through practical projects and constant study, always open to learning new technologies and best development practices.',
 
     'skills.tag': 'Technologies',
-    'skills.title': 'Skills & Knowledge',
-    'skills.description':
-      'Technologies and concepts I have been studying and applying in practical projects.',
+    "skills.title": "Technologies in practice",
+    "skills.description": "Tools I use and study. The projects above show how I apply this knowledge.",
     'skills.languages': 'Languages',
     'skills.frameworks': 'Frameworks',
     'skills.databases': 'Databases',
@@ -130,7 +168,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'projects.estetica_badge': 'Live',
     'projects.estetica_title': 'Aesthetic Clinic — Landing Page',
     'projects.estetica_desc':
-      'Landing page for a facial aesthetics clinic in Palmas/TO, Brazil. Elegant mobile-first design with a bordeaux and gold palette, WhatsApp integration, scheduling via Cal.com, and deployed on Firebase Hosting. Built with React and Vite.',
+      'Landing page for a facial aesthetics clinic in Palmas/TO, Brazil. Elegant mobile-first design with a burgundy and gold palette, WhatsApp integration, scheduling via Cal.com, and deployed on Firebase Hosting. Built with React and Vite.',
     //------------------------------------------------------------------------------------------------------------------------------------------------
     'projects.pudim_badge': 'Live',
     'projects.pudim_title': 'Meu Pudizim — Landing Page',
@@ -167,7 +205,7 @@ const translations: Record<Lang, Record<string, string>> = {
     //------------------------------------------------------------------------------------------------------------------------------------------------
 
     'contact.tag': 'Contact',
-    'contact.title': "Let's talk?",
+    'contact.title': "Let's talk",
     'contact.text':
       "I'm open to new opportunities, projects, and collaborations. Fill out the form or reach out through the links below.",
     'contact.label_name': 'Name',
@@ -178,14 +216,56 @@ const translations: Record<Lang, Record<string, string>> = {
     'contact.placeholder_message': 'Write your message...',
     'contact.btn_send': 'Send message',
     'contact.btn_sending': 'Sending...',
-    'contact.success': 'Message sent successfully! I will reply soon.',
-    'contact.error': 'Something went wrong. Try again or send via email.',
+    "contact.success": "Message sent! Thank you for getting in touch.",
+    "contact.error": "Could not send your message. Your text was kept; please try again later.",
+    "common.new_tab": " (opens in a new tab)",
+    "nav.label": "Main navigation",
+    "nav.home": "João Pedro — home",
+    "nav.language": "Language",
+    "nav.menu": "Menu",
+    "nav.close": "Close",
+    "nav.skip": "Skip to content",
+    "hero.projects": "Explore my projects",
+    "hero.photo": "João Pedro working on a laptop",
+    "hero.caption": "Learning, building and growing.",
+    "projects.intro": "A selection of applications and websites I have built to learn and solve real problems.",
+    "projects.all": "All",
+    "projects.apps": "Applications",
+    "projects.landing": "Landing pages",
+    "projects.personal": "Personal",
+    "projects.more": "More projects",
+    "projects.filter": "Filter projects",
+    "projects.show_all": "View all projects",
+    "projects.show_less": "Show fewer",
+    "projects.no_link": "Public demo not available.",
+    "projects.featured": "Featured project",
+    "projects.budget_title": "Quote Builder",
+    "projects.budget_intro": "A need at my father’s auto repair shop became a free browser-based tool, with no sign-up required.",
+    "projects.problem": "The starting point",
+    "projects.solution": "What I built",
+    "projects.budget_problem": "My father needed help preparing quotes. Finding a good, simple and free online tool was not always easy.",
+    "projects.budget_solution": "Parts and labor, discounts, print-to-PDF, local history and exportable backups. Responsive interface and a contact form integrated with EmailJS.",
+    "projects.budget_limit": "Data stays in the browser, without cross-device synchronization. An Android version is under consideration.",
+    "projects.try_app": "Try the application",
+    "projects.budget_image": "Actual quote builder preview showing a sample automotive maintenance quote",
+    "projects.budget_caption": "Application screenshot · Fictional demonstration data",
+    "about.focus_title": "From a need to a solution",
+    "about.focus_text": "I like to understand the problem before choosing the technology. My projects include web applications, websites for small businesses and mobile development experiments.",
+    "about.learning_title": "Continuous learning",
+    "about.learning_text": "My internship experience includes technical support and infrastructure, while I continue to develop my frontend and backend skills.",
+    "contact.note": "Your name, email and message will be used to respond to your inquiry. Do not send passwords or sensitive information.",
+    "contact.linkedin": "Experience and background",
+    "contact.github": "Code and projects",
+    "contact.instagram": "Follow my work",
+    "footer.text": "Built by João Pedro with Angular.",
+    "footer.top": "Back to top",
   },
 };
 
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
   private lang = signal<Lang>('pt');
+  private document = inject(DOCUMENT);
 
   get currentLang(): Lang {
     return this.lang();
@@ -193,6 +273,10 @@ export class TranslationService {
 
   setLang(lang: Lang) {
     this.lang.set(lang);
+    this.document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    this.document.title = lang === 'pt' ? 'João Pedro Paulino | Desenvolvimento Web' : 'João Pedro Paulino | Web Development';
+    const description = this.document.querySelector('meta[name="description"]');
+    description?.setAttribute('content', this.t('hero.description'));
   }
 
   t(key: string): string {

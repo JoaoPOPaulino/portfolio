@@ -1,23 +1,16 @@
-<nav>
-  <h2>João<span> Pedro</span></h2>
-
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="#about">{{ translationService.t('nav.about') }}</a>
-      <a href="#skills">{{ translationService.t('nav.skills') }}</a>
-      <a href="#projects">{{ translationService.t('nav.projects') }}</a>
-      <a href="#contact">{{ translationService.t('nav.contact') }}</a> 
+<nav [attr.aria-label]="translationService.t('nav.label')" (keydown.escape)="closeMenu()">
+  <a class="brand" href="#home" (click)="closeMenu()" [attr.aria-label]="translationService.t('nav.home')">jp<span aria-hidden="true">.</span></a>
+  <div class="nav-controls">
+    <div id="main-navigation" class="nav-links" [class.is-open]="menuOpen()">
+      <a href="#projects" (click)="closeMenu()">{{ translationService.t('nav.projects') }}</a>
+      <a href="#about" (click)="closeMenu()">{{ translationService.t('nav.about') }}</a>
+      <a href="#skills" (click)="closeMenu()">{{ translationService.t('nav.skills') }}</a>
+      <a class="contact-link" href="#contact" (click)="closeMenu()">{{ translationService.t('nav.contact') }} <span aria-hidden="true">↗</span></a>
     </div>
-
-    <div class="lang-toggle">
-      <button
-        class="lang-btn"
-        [class.active]="currentLang === 'pt'"
-        (click)="setLang('pt')">PT</button>
-      <button
-        class="lang-btn"
-        [class.active]="currentLang === 'en'"
-        (click)="setLang('en')">EN</button>
+    <div class="lang-toggle" role="group" [attr.aria-label]="translationService.t('nav.language')">
+      <button type="button" lang="pt-BR" [class.active]="currentLang === 'pt'" [attr.aria-pressed]="currentLang === 'pt'" (click)="setLang('pt')">PT</button>
+      <button type="button" lang="en" [class.active]="currentLang === 'en'" [attr.aria-pressed]="currentLang === 'en'" (click)="setLang('en')">EN</button>
     </div>
+    <button class="menu-toggle" type="button" aria-controls="main-navigation" [attr.aria-expanded]="menuOpen()" (click)="menuOpen.set(!menuOpen())">{{ translationService.t(menuOpen() ? 'nav.close' : 'nav.menu') }} <span aria-hidden="true">{{ menuOpen() ? '×' : '☰' }}</span></button>
   </div>
 </nav>

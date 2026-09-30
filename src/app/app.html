@@ -1,9 +1,10 @@
+<a class="skip-link" href="#main-content">{{ translationService.t('nav.skip') }}</a>
 <app-navbar></app-navbar>
-
-<main>
+<main id="main-content" tabindex="-1">
   <app-hero></app-hero>
+  <app-projects></app-projects>
   <app-about></app-about>
   <app-skills></app-skills>
-  <app-projects></app-projects>
   <app-contact></app-contact>
-</main> 
+</main>
+<footer><a class="footer-brand" href="#home">João Pedro<span aria-hidden="true">.</span></a><p>{{ translationService.t('footer.text') }}</p><a href="#home">{{ translationService.t('footer.top') }} <span aria-hidden="true">↑</span></a></footer>

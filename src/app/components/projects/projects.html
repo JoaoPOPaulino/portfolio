@@ -1,242 +1,36 @@
-<section id="projects">
-  <span class="section-tag">{{ translationService.t('projects.tag') }}</span>
-  <h2>{{ translationService.t('projects.title') }}</h2>
-  <div class="section-divider"></div>
-
-  <!-- Filtros -->
-  <div class="filter-bar">
-    @for (f of filters; track f.key) {
-      <button
-        class="filter-btn"
-        [class.active]="activeFilter() === f.key"
-        (click)="setFilter(f.key)"
-      >
-        {{ getFilterLabel(f) }}
-      </button>
-    }
-  </div>
-
+<section id="projects" aria-labelledby="projects-title">
+  <div class="section-heading"><div><span class="section-tag">{{ translationService.t('projects.tag') }}</span><h2 id="projects-title">{{ translationService.t('projects.title') }}</h2></div><p>{{ translationService.t('projects.intro') }}</p></div>
+  <article class="featured" aria-labelledby="budget-title">
+    <div class="featured-visual">
+      <div class="browser-bar"><span aria-hidden="true">● ● ●</span><span>orcamento-ac.vercel.app</span><span aria-hidden="true">↗</span></div>
+      <img src="projects/orcamento-preview.png" [alt]="translationService.t('projects.budget_image')" width="620" height="1000" loading="lazy">
+      <p class="visual-caption">{{ translationService.t('projects.budget_caption') }}</p>
+    </div>
+    <div class="featured-content">
+      <span class="card-badge">{{ translationService.t('projects.featured') }} <span aria-hidden="true">·</span> {{ translationService.t('projects.saas_badge') }}</span>
+      <h3 id="budget-title">{{ translationService.t('projects.budget_title') }}</h3>
+      <p>{{ translationService.t('projects.budget_intro') }}</p>
+      <dl class="case-study"><div><dt>{{ translationService.t('projects.problem') }}</dt><dd>{{ translationService.t('projects.budget_problem') }}</dd></div><div><dt>{{ translationService.t('projects.solution') }}</dt><dd>{{ translationService.t('projects.budget_solution') }}</dd></div></dl>
+      <div class="card-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>EmailJS</span><span>Vercel</span></div>
+      <p class="project-note">{{ translationService.t('projects.budget_limit') }}</p>
+      <div class="card-buttons"><a class="btn-primary" href="https://orcamento-ac.vercel.app/" target="_blank" rel="noopener noreferrer">{{ translationService.t('projects.try_app') }} <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a><a class="code-link" href="https://github.com/JoaoPOPaulino/orcamento-ac" target="_blank" rel="noopener noreferrer">{{ translationService.t('projects.view_code') }} <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a></div>
+    </div>
+  </article>
+  <div class="collection-heading"><h3>{{ translationService.t('projects.more') }}</h3><div class="filter-bar" role="group" [attr.aria-label]="translationService.t('projects.filter')">@for (f of filters; track f.key) {<button type="button" class="filter-btn" [class.active]="activeFilter() === f.key" [attr.aria-pressed]="activeFilter() === f.key" (click)="setFilter(f.key)">{{ translationService.t(f.translation) }}</button>}</div></div>
   <div class="projects-grid">
-    <!-- Estética Agenda — SaaS -->
-    @if (isVisible('aplicacoes')) {
-      <div class="card saas-card">
-        <span class="card-badge">
-          <i class="fas fa-rocket"></i> {{ translationService.t('projects.saas_badge') }}
-        </span>
-        <h3>{{ translationService.t('projects.saas_title') }}</h3>
-        <p>{{ translationService.t('projects.saas_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">React</span>
-          <span class="card-tag">Node.js</span>
-          <span class="card-tag">Supabase</span>
-          <span class="card-tag">TypeScript</span>
-          <span class="card-tag">PostgreSQL</span>
-          <span class="card-tag">Sistema Web</span>
-        </div>
+    @for (project of visibleProjects(); track project.key; let index = $index) {
+      <article class="card">
+        <div class="card-top"><span class="project-number" aria-hidden="true">{{ (index + 1).toString().padStart(2, '0') }} /</span>@if (project.badge) {<span class="small-badge">{{ translationService.t(project.badge) }}</span>}</div>
+        <h3>{{ translationService.t('projects.' + project.key + '_title') }}</h3>
+        <p>{{ translationService.t('projects.' + project.key + '_desc') }}</p>
+        <div class="card-tags">@for (tag of project.tags; track tag) {<span>{{ tag }}</span>}</div>
         <div class="card-buttons">
-          <button (click)="openLink('https://github.com/JoaoPOPaulino/estetica-agenda')">
-            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-          </button>
-          <button class="btn-live" (click)="openLink('https://thamyres-ribeiro.vercel.app')">
-            <i class="fas fa-external-link-alt"></i>
-            {{ translationService.t('projects.view_site') }}
-          </button>
+          @if (project.live) {<a class="project-link" [href]="project.live" target="_blank" rel="noopener noreferrer">{{ translationService.t('projects.view_site') }} <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>}
+          @if (project.code) {<a class="code-link" [href]="project.code" target="_blank" rel="noopener noreferrer">{{ translationService.t('projects.view_code') }} <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>}
+          @if (!project.code && !project.live) {<p class="project-note">{{ translationService.t('projects.no_link') }}</p>}
         </div>
-      </div>
-    }
-
-    <!-- Clínica Estética — Landing Page -->
-    @if (isVisible('landing-pages')) {
-      <div class="card saas-card">
-        <span class="card-badge">
-          <i class="fas fa-rocket"></i> {{ translationService.t('projects.estetica_badge') }}
-        </span>
-        <h3>{{ translationService.t('projects.estetica_title') }}</h3>
-        <p>{{ translationService.t('projects.estetica_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">React</span>
-          <span class="card-tag">Vite</span>
-          <span class="card-tag">Firebase Hosting</span>
-          <span class="card-tag">Cal.com</span>
-          <span class="card-tag">TypeScript</span>
-          <span class="card-tag">Tailwind CSS</span>
-        </div>
-        <div class="card-buttons">
-          <button (click)="openLink('https://github.com/JoaoPOPaulino/geovana-teles')">
-            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-          </button>
-          <button class="btn-live" (click)="openLink('https://geovanateles.com.br/')">
-            <i class="fas fa-external-link-alt"></i>
-            {{ translationService.t('projects.view_site') }}
-          </button>
-        </div>
-      </div>
-    }
-
-    <!-- Meu Pudizim — Landing Page -->
-    @if (isVisible('landing-pages')) {
-      <div class="card">
-        <span class="card-badge">
-          <i class="fas fa-rocket"></i> {{ translationService.t('projects.pudim_badge') }}
-        </span>
-        <h3>{{ translationService.t('projects.pudim_title') }}</h3>
-        <p>{{ translationService.t('projects.pudim_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">Astro</span>
-          <span class="card-tag">JavaScript</span>
-          <span class="card-tag">CSS</span>
-          <span class="card-tag">Vercel</span>
-        </div>
-        <div class="card-buttons">
-          <button (click)="openLink('https://github.com/JoaoPOPaulino/meu-pudizim')">
-            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-          </button>
-          <button class="btn-live" (click)="openLink('https://meu-pudizim.vercel.app')">
-            <i class="fas fa-external-link-alt"></i>
-            {{ translationService.t('projects.view_site') }}
-          </button>
-        </div>
-      </div>
-    }
-
-    <!-- A.F Eletricista — Landing Page -->
-    @if (isVisible('landing-pages')) {
-      <div class="card">
-        <span class="card-badge">
-          <i class="fas fa-rocket"></i> {{ translationService.t('projects.eletricista_badge') }}
-        </span>
-        <h3>{{ translationService.t('projects.eletricista_title') }}</h3>
-        <p>{{ translationService.t('projects.eletricista_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">React</span>
-          <span class="card-tag">Vite</span>
-          <span class="card-tag">Tailwind CSS</span>
-          <span class="card-tag">TypeScript</span>
-          <span class="card-tag">Vercel</span>
-        </div>
-        <div class="card-buttons">
-          <button (click)="openLink('https://github.com/JoaoPOPaulino/af-eletricista')">
-            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-          </button>
-          <button class="btn-live" (click)="openLink('https://www.afeletricista.com.br')">
-            <i class="fas fa-external-link-alt"></i>
-            {{ translationService.t('projects.view_site') }}
-          </button>
-        </div>
-      </div>
-    }
-
-    <!-- Site Institucional — Django -->
-    @if (isVisible('aplicacoes')) {
-      <div class="card">
-        <h3>{{ translationService.t('projects.django_title') }}</h3>
-        <p>{{ translationService.t('projects.django_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">Python</span>
-          <span class="card-tag">Django</span>
-          <span class="card-tag">PostgreSQL</span>
-        </div>
-        <button (click)="openLink('https://github.com/JoaoPOPaulino/apasi')">
-          <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-        </button>
-      </div>
-    }
-
-    <!-- Portfólio Angular -->
-    @if (isVisible('pessoal')) {
-      <div class="card">
-        <h3>{{ translationService.t('projects.portfolio_title') }}</h3>
-        <p>{{ translationService.t('projects.portfolio_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">Angular</span>
-          <span class="card-tag">TypeScript</span>
-          <span class="card-tag">GitHub Pages</span>
-        </div>
-        <button (click)="openLink('https://github.com/JoaoPOPaulino/portfolio')">
-          <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-        </button>
-      </div>
-    }
-
-    @if (isVisible('aplicacoes')) {
-      <div class="card saas-card">
-        <span class="card-badge">
-          <i class="fas fa-rocket"></i> {{ translationService.t('projects.rifa_badge') }}
-        </span>
-        <h3>{{ translationService.t('projects.rifa_title') }}</h3>
-        <p>{{ translationService.t('projects.rifa_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">React</span>
-          <span class="card-tag">TypeScript</span>
-          <span class="card-tag">Firebase Auth</span>
-          <span class="card-tag">Firestore</span>
-          <span class="card-tag">Cloud Functions</span>
-          <span class="card-tag">Tailwind CSS</span>
-          <span class="card-tag">WhatsApp</span>
-        </div>
-        <div class="card-buttons">
-          <button (click)="openLink('https://github.com/JoaoPOPaulino/minha-rifa')">
-            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-          </button>
-          <button class="btn-live" (click)="openLink('https://minha-rifa-3773a.web.app')">
-            <i class="fas fa-external-link-alt"></i>
-            {{ translationService.t('projects.view_site') }}
-          </button>
-        </div>
-      </div>
-    }
-
-    <!-- Site do Casamento -->
-    @if (isVisible('pessoal')) {
-      <div class="card">
-        <span class="card-badge"> <i class="fas fa-heart"></i> Projeto Pessoal </span>
-        <h3>Site do Casamento — João Pedro & Geovana</h3>
-        <p>
-          Plataforma completa para o nosso casamento: sistema de RSVP com código único, dashboard
-          administrativo em tempo real, gestão de convidados, controle financeiro com gráficos,
-          lista de presentes interativa e página pública elegante.
-        </p>
-        <div class="card-tags">
-          <span class="card-tag">React</span>
-          <span class="card-tag">TypeScript</span>
-          <span class="card-tag">Firebase</span>
-          <span class="card-tag">Zustand</span>
-          <span class="card-tag">Recharts</span>
-          <span class="card-tag">Tailwind CSS</span>
-        </div>
-        <div class="card-buttons">
-          <button (click)="openLink('https://github.com/SEU-USUARIO/site-casamento')">
-            <i class="fab fa-github"></i> Ver Código
-          </button>
-          <button class="btn-live" (click)="openLink('https://SEU-LINK.vercel.app')">
-            <i class="fas fa-external-link-alt"></i> Ver Site
-          </button>
-        </div>
-      </div>
-    }
-
-    <!-- Desapego — App Mobile -->
-    @if (isVisible('aplicacoes')) {
-      <div class="card saas-card">
-        <span class="card-badge">
-          <i class="fas fa-mobile-alt"></i> {{ translationService.t('projects.desapego_badge') }}
-        </span>
-        <h3>{{ translationService.t('projects.desapego_title') }}</h3>
-        <p>{{ translationService.t('projects.desapego_desc') }}</p>
-        <div class="card-tags">
-          <span class="card-tag">Flutter</span>
-          <span class="card-tag">Dart</span>
-          <span class="card-tag">Firebase</span>
-          <span class="card-tag">Firestore</span>
-          <span class="card-tag">Gemini API</span>
-          <span class="card-tag">Mobile</span>
-        </div>
-        <div class="card-buttons">
-          <button (click)="openLink('https://github.com/JoaoPOPaulino/desapego_app')">
-            <i class="fab fa-github"></i> {{ translationService.t('projects.view_code') }}
-          </button>
-        </div>
-      </div>
+      </article>
     }
   </div>
+  @if (filteredProjects().length > 4) {<div class="more-projects"><button type="button" class="btn-secondary" [attr.aria-expanded]="showAll()" (click)="showAll.set(!showAll())">{{ translationService.t(showAll() ? 'projects.show_less' : 'projects.show_all') }} <span aria-hidden="true">{{ showAll() ? '−' : '+' }}</span></button></div>}
 </section>

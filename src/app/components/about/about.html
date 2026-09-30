@@ -1,8 +1,4 @@
-<!-- about.component.html -->
-<section id="about">
-  <span class="section-tag">{{ translationService.t('about.tag') }}</span>
-  <h2>{{ translationService.t('about.title') }}</h2>
-  <div class="section-divider"></div>
-
-  <p>{{ translationService.t('about.text') }}</p>
+<section id="about" aria-labelledby="about-title">
+  <div class="about-intro"><span class="section-tag">{{ translationService.t('about.tag') }}</span><h2 id="about-title">{{ translationService.t('about.title') }}</h2><p>{{ translationService.t('about.text') }}</p></div>
+  <div class="about-points"><article><span aria-hidden="true">01</span><div><h3>{{ translationService.t('about.focus_title') }}</h3><p>{{ translationService.t('about.focus_text') }}</p></div></article><article><span aria-hidden="true">02</span><div><h3>{{ translationService.t('about.learning_title') }}</h3><p>{{ translationService.t('about.learning_text') }}</p></div></article></div>
 </section>

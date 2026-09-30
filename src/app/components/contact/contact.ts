@@ -1,5 +1,5 @@
 // contact.component.ts
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../service/translation.service';
@@ -18,12 +18,12 @@ export class Contact {
   email = '';
   message = '';
 
-  status: 'idle' | 'sending' | 'success' | 'error' = 'idle';
+  status = signal<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   async sendEmail() {
-    if (!this.name || !this.email || !this.message) return;
+    if (this.status() === 'sending' || !this.name.trim() || this.name.length > 100 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email.trim()) || this.email.length > 254 || this.message.trim().length < 10 || this.message.length > 4000) return;
 
-    this.status = 'sending';
+    this.status.set('sending');
 
     try {
       await emailjs.send(
@@ -37,15 +37,15 @@ export class Contact {
         'TSh_PRfSTgC-DHbAd'
       );
 
-      this.status = 'success';
+      this.status.set('success');
       this.name = '';
       this.email = '';
       this.message = '';
 
-      setTimeout(() => (this.status = 'idle'), 5000);
+
     } catch {
-      this.status = 'error';
-      setTimeout(() => (this.status = 'idle'), 5000);
+      this.status.set('error');
+
     }
   }
 }
