@@ -1,18 +1,26 @@
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { provideRouter } from '@angular/router';
+import { RouterTestingHarness } from '@angular/router/testing';
+import { routes } from './app.routes';
 import { TranslationService } from './service/translation.service';
 
-describe('Portfolio', () => {
-  it('presents the quote project with real links and changes language', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const element = fixture.nativeElement as HTMLElement;
-    expect(element.querySelector('a[href="https://orcamento-ac.vercel.app/"]')).toBeTruthy();
-    expect(element.innerHTML).not.toContain('SEU-USUARIO');
+describe('Portfolio navigation', () => {
+  it('opens both studies, translates their content and returns to projects', async () => {
+    TestBed.configureTestingModule({providers:[provideRouter(routes)]});
+    const harness = await RouterTestingHarness.create('/');
+    expect(harness.routeNativeElement?.querySelector('a[href="https://orcamento-ac.vercel.app/"]')).toBeTruthy();
+    expect(harness.routeNativeElement?.querySelector('a[href="/projetos/estetica-agenda"]')).toBeTruthy();
+    await harness.navigateByUrl('/projetos/estetica-agenda');
+    expect(harness.routeNativeElement?.textContent).toContain('minha namorada');
     TestBed.inject(TranslationService).setLang('en');
-    await fixture.whenStable();
-    expect(document.documentElement.lang).toBe('en');
-    expect(element.querySelector('h1')?.textContent).toContain('João Pedro');
+    harness.detectChanges();
+    expect(harness.routeNativeElement?.textContent).toContain('my girlfriend');
+    await harness.navigateByUrl('/projetos/desapego');
+    expect(harness.routeNativeElement?.textContent).toContain('Mobile Development II');
     TestBed.inject(TranslationService).setLang('pt');
+    harness.detectChanges();
+    expect(harness.routeNativeElement?.textContent).toContain('Desenvolvimento Mobile II');
+    await harness.navigateByUrl('/');
+    expect(harness.routeNativeElement?.querySelector('#projects')).toBeTruthy();
   });
 });

@@ -1,11 +1,11 @@
 <nav [attr.aria-label]="translationService.t('nav.label')" (keydown.escape)="closeMenu()">
-  <a class="brand" href="#home" (click)="closeMenu()" [attr.aria-label]="translationService.t('nav.home')">jp<span aria-hidden="true">.</span></a>
+  <a class="brand" routerLink="/" fragment="home" (click)="closeMenu()" [attr.aria-label]="translationService.t('nav.home')">jp<span aria-hidden="true">.</span></a>
   <div class="nav-controls">
     <div id="main-navigation" class="nav-links" [class.is-open]="menuOpen()">
-      <a href="#projects" (click)="closeMenu()">{{ translationService.t('nav.projects') }}</a>
-      <a href="#about" (click)="closeMenu()">{{ translationService.t('nav.about') }}</a>
-      <a href="#skills" (click)="closeMenu()">{{ translationService.t('nav.skills') }}</a>
-      <a class="contact-link" href="#contact" (click)="closeMenu()">{{ translationService.t('nav.contact') }} <span aria-hidden="true">↗</span></a>
+      <a routerLink="/" fragment="projects" (click)="closeMenu()">{{ translationService.t('nav.projects') }}</a>
+      <a routerLink="/" fragment="about" (click)="closeMenu()">{{ translationService.t('nav.about') }}</a>
+      <a routerLink="/" fragment="skills" (click)="closeMenu()">{{ translationService.t('nav.skills') }}</a>
+      <a class="contact-link" routerLink="/" fragment="contact" (click)="closeMenu()">{{ translationService.t('nav.contact') }} <span aria-hidden="true">↗</span></a>
     </div>
     <div class="lang-toggle" role="group" [attr.aria-label]="translationService.t('nav.language')">
       <button type="button" lang="pt-BR" [class.active]="currentLang === 'pt'" [attr.aria-pressed]="currentLang === 'pt'" (click)="setLang('pt')">PT</button>

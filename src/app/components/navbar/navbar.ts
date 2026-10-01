@@ -1,6 +1,7 @@
+import { RouterLink } from '@angular/router';
 import { Component, signal } from '@angular/core';
 import { TranslationService } from '../../service/translation.service';
-@Component({ selector: 'app-navbar', templateUrl: './navbar.html', styleUrl: './navbar.css' })
+@Component({ imports: [RouterLink], selector: 'app-navbar', templateUrl: './navbar.html', styleUrl: './navbar.css' })
 export class Navbar {
   menuOpen = signal(false);
   constructor(public translationService: TranslationService) {}

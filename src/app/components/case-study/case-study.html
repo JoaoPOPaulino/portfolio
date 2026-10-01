@@ -1,0 +1,22 @@
+<article class="study" [class.mobile-study]="id === 'desapego'">
+  <header class="study-header">
+    <a class="back" routerLink="/" fragment="projects">← {{ labels().back }}</a>
+    <div class="eyebrow">{{ labels().tag }} <span aria-hidden="true"> / </span> {{ study.name }}</div>
+    <p class="type">{{ content().type }}</p>
+    <h1 tabindex="-1">{{ content().headline }}</h1>
+    <p class="lead">{{ content().intro }}</p>
+    <div class="tags">@for (tag of study.tags; track tag) {<span>{{ tag }}</span>}</div>
+    <div class="actions">
+      @if (live) {<a class="btn-primary" [href]="live" target="_blank" rel="noopener noreferrer">{{ labels().live }} ↗<span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>}
+      <a class="btn-secondary" [href]="study.code" target="_blank" rel="noopener noreferrer">{{ labels().code }} ↗<span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>
+    </div>
+  </header>
+  <section class="context-grid">
+    <div><span class="section-tag">01 / {{ labels().context }}</span><h2>{{ study.name }}</h2><p>{{ content().context }}</p></div>
+    <aside><span class="section-tag">{{ labels().role }}</span><h3>{{ labels().solo }}</h3><p>{{ content().role }}</p></aside>
+  </section>
+  <section class="features"><span class="section-tag">02 / {{ labels().features }}</span><div class="feature-grid">@for(feature of content().features;track feature.title){<div><h3>{{ feature.title }}</h3><p>{{ feature.text }}</p></div>}</div></section>
+  <section class="screens"><span class="section-tag">03 / {{ labels().screens }}</span><p class="image-note">{{ content().imageNote }}</p><div class="gallery">@for(img of content().images;track img.src){<figure><a [href]="img.src" target="_blank" rel="noopener noreferrer"><img [src]="img.src" [alt]="img.alt" loading="lazy"><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a><figcaption>{{ img.caption }}</figcaption></figure>}</div></section>
+  <section class="conclusion"><div><span class="section-tag">04 / {{ labels().decision }}</span><p>{{ content().decision }}</p></div><div><h2>{{ labels().status }}</h2><p>{{ content().status }}</p></div><div><h2>{{ labels().next }}</h2><p>{{ content().next }}</p></div></section>
+  <div class="study-end"><a class="btn-secondary" routerLink="/" fragment="projects">← {{ labels().back }}</a><a routerLink="/" fragment="contact">{{ labels().contact }} →</a></div>
+</article>

@@ -6,13 +6,13 @@
     <h2 class="subtitle">{{ translationService.t('hero.subtitle') }}</h2>
     <p class="description">{{ translationService.t('hero.description') }}</p>
     <div class="hero-buttons">
-      <a class="btn-primary" href="#projects">{{ translationService.t('hero.projects') }} <span aria-hidden="true">↗</span></a>
+      <a class="btn-primary" routerLink="/" fragment="projects">{{ translationService.t('hero.projects') }} <span aria-hidden="true">↗</span></a>
       <a class="btn-secondary" [href]="translationService.currentLang === 'en' ? 'CV_Joao_Pedro_EN.pdf' : 'Curriculo_Joao_Pedro_Paulino.pdf'" download>{{ translationService.t('hero.cv') }} <span aria-hidden="true">↓</span></a>
     </div>
     <div class="hero-links">
       <a href="https://github.com/JoaoPOPaulino" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>
       <a href="https://www.linkedin.com/in/joão-pedro-de-oliveira-paulino-289502325/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">{{ translationService.t('common.new_tab') }}</span></a>
-      <a href="#contact">{{ translationService.t('nav.contact') }} <span aria-hidden="true">→</span></a>
+      <a routerLink="/" fragment="contact">{{ translationService.t('nav.contact') }} <span aria-hidden="true">→</span></a>
     </div>
   </div>
   <figure class="hero-portrait">
